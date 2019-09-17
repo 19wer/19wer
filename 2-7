@@ -1,0 +1,18 @@
+package liti;
+import java.util.Scanner;
+public class qwe {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input=new Scanner(System.in);
+		long totalMilloniseconds=System.currentTimeMillis();
+		long totalSeconds=totalMilloniseconds/1000;
+		long currentSeconds=totalSeconds%60;
+		long totalMinutes=totalSeconds/60;
+		long currentMinutes=totalMinutes%60;
+		long totalHours=totalMinutes/60;
+		long currentHour=totalHours%24+8;
+System.out.println("Current time is "+currentHour+" : "+currentMinutes+" : "+currentSeconds+" GMT");
+	}
+
+}
