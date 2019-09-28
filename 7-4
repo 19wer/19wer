@@ -1,0 +1,49 @@
+import java.util.Scanner;
+public class hello {
+	//随机产生小写英文字母
+    public static char RandomCharacter() {
+        return (char) ('a' + Math.random() * ('z'- 'a' + 1));
+    }
+    //将产生的英文字母放到chars中
+	public static char[] createArray() {
+		char[] chars=new char[100];
+		for(int i=0;i<chars.length;i++)
+			chars[i]=RandomCharacter();
+		return chars;
+	}
+	//输出chars
+	public static void displayArray(char[] chars) {
+		for(int i=0;i<chars.length;i++) {
+			if((i+1)%20==0)
+				System.out.println(chars[i]);//第20个换行
+			else
+				System.out.print(chars[i]+" ");
+		}
+	}
+	//计算字母出现次数
+	public static int[] countLetters(char[] chars) {
+		int[] counts=new int[26];
+		for(int i=0;i<chars.length;i++) {
+			counts[chars[i]-'a']++;
+		}
+		return counts;
+	}
+	//输出字母和次数
+	public static void displayCounts(int[] counts) {
+		for(int i=0;i<counts.length;i++) {
+			if((i+1)%10==0)
+				System.out.println(counts[i]+" "+(char)(i+'a'));
+			else
+				System.out.print(counts[i]+" "+(char)(i+'a')+" ");//最后一个换行
+		}
+	}
+	public static void main(String[] args) {
+char[] chars=createArray();
+System.out.println("The lowercase letters are: ");
+displayArray(chars);
+int[] counts=countLetters(chars);
+System.out.println();
+System.out.println("The occurrences of each letter are:");
+displayCounts(counts);
+	}
+}
