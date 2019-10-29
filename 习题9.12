@@ -1,0 +1,55 @@
+
+public class LinearEquation {
+double x1,x2,x3,x4;
+double y1,y2,y3,y4;
+double a,b,c,d,e,f;
+public void set(double x11,double x22,double x33,double x44,double y11,double y22,double y33,double y44) {
+x1=x11;	
+x2=x22;	
+x3=x33;	
+x4=x44;	
+y1=y11;	
+y2=y22;	
+y3=y33;	
+y4=y44;
+a=y1-y2;
+b=x1-x2;
+c=y3-y4;
+d=x3-x4;
+e=(y1-y2)*x1-(x1-x2)*y1;
+f=(y3-y4)*x3-(x3-x4)*y3;
+	}
+double get1(){
+return (e*d-b*f)/(a*d-b*c);
+}
+double get2(){
+return (a*f-e*c)/(a*d-b*c);
+}
+}
+
+
+
+
+
+import java.util.Scanner;
+public class nk912 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input=new Scanner(System.in);
+System.out.println("请输入第一条线段的两个端点");
+double x1=input.nextDouble();
+double y1=input.nextDouble();
+double x2=input.nextDouble();
+double y2=input.nextDouble();
+System.out.println("请输入第二条线段的两个端点");
+double x3=input.nextDouble();
+double y3=input.nextDouble();
+double x4=input.nextDouble();
+double y4=input.nextDouble();
+LinearEquation  le=new LinearEquation();
+le.set(x1, x2, x3, x4, y1, y2, y3, y4);
+System.out.println(le.get1());
+System.out.println(le.get2());
+	}
+
+}
