@@ -1,0 +1,41 @@
+public class Location {
+public int row,column;
+double maxValue;
+}
+
+
+import java.util.*;
+public class test {
+	public static Location locateLargest(double [] [] a) {
+		Location b = new Location();
+		b.maxValue=a[0][0];
+		for(int i=0;i<a.length;i++)
+			for(int j=0;j<a[i].length;j++)
+			{
+				if(b.maxValue<a[i][j])
+				{
+					b.maxValue = a[i][j];
+					b.row = i;
+					b.column = j;
+				}
+			}
+		return b;
+	}
+	public static void main(String[] args) {
+		Location c = new Location();
+		Scanner input = new Scanner(System.in);
+		int w = input.nextInt();
+		int e = input.nextInt();
+		double[][] a = new double[w][e];
+		for(int i=0;i<a.length;i++)
+			for(int j=0;j<a[i].length;j++)
+			{
+				a[i][j] = input.nextDouble();
+			}
+		c = locateLargest(a);
+		System.out.println(c.maxValue);		
+		System.out.println(c.row);		
+		System.out.println(c.column);		
+	}
+ 
+}
