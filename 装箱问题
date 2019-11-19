@@ -5,7 +5,7 @@ public class 装箱问题 {
 		Scanner input=new Scanner(System.in);
 		ArrayList<Integer> num=new ArrayList<>();
 		ArrayList<Integer> dnum=new ArrayList<>();
-		int temp,max;
+		int temp,sum=0;
 		System.out.println("Enter the number of objects: ");
 		int n=input.nextInt();
 		System.out.println("Enter the weights of objects: ");
@@ -13,9 +13,26 @@ public class 装箱问题 {
 			temp=input.nextInt();
 			num.add(temp);
 		}
-		
+		int j=0;
         java.util.Collections.sort(num);
-        
+        for(int i=n-1;i>=n/2;i--) {
+        	while(j<n/2) {
+        		if(num.get(i)==10) {
+       			 sum++;
+       			 break;
+        		}
+        		else if(num.get(i)+num.get(j)==10) {
+        			 sum++;
+        			 j++;
+           			 break;
+        		}
+        		else if(num.get(i)+num.get(j)>10) {
+    				break;	
+        		}
+        	}
+        }
+
+        System.out.println(sum);
 	}
 
 }
