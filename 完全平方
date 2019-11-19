@@ -1,0 +1,36 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+public class 完全平方 {
+	public static void main(String[] args) {	
+		ArrayList<Integer> num=new ArrayList<>();
+		ArrayList<Integer> count=new ArrayList<>();
+        Scanner input=new Scanner(System.in);
+        System.out.print("Enter an integer m: ");
+        int m=input.nextInt();
+        int t,s=1,temp=m;
+        
+        for(int i=2;i<=m;i++){
+        	t=0;
+        	if(m%i==0){
+        		num.add(i);
+        		while(true){		
+        		if(m%i!=0){
+            		count.add(t);  
+        			break;
+        		}
+        		t++;
+        		m=m/i;  
+        		}
+        	}
+        }
+        
+      for(int i=0;i<num.size();i++){
+	if(count.get(i)%2==1)
+		s*=num.get(i);
+       }
+      
+      System.out.println("The smallest number n for m * n to be a perfect square is "+s);
+      System.out.println("m * n is "+temp*s);
+	}
+
+}
