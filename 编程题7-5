@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class ff {
+
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in);
+		int [] a=new int [100];
+		int [] b=new int [100];
+        int n=0,temp,i;
+        System.out.print("Enter ten numbers: ");
+        
+        for(i=0;i<10;i++){
+          temp=input.nextInt();
+          if(b[temp]==0){
+          a[i]=temp;
+          b[temp]=1;
+          }
+	}
+
+        System.out.print("The number of distinct number is: ");
+        temp=input.nextInt();
+        if(b[temp]==0){
+        	a[i]=temp;
+        	b[temp]=1;
+        }
+        
+        System.out.print("The distinct numbers are: ");
+        for(i=0;i<100;i++){
+        	if(b[a[i]]!=0)
+        		 System.out.print(a[i]+" ");
+        }
+
+	}
+
+}
