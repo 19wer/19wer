@@ -1,0 +1,28 @@
+package lcl;
+import java.util.Scanner;
+public class ddd {
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in);
+		double[] a=new double[10];
+		double temp;
+		for(int i=0;i<10;i++)
+			a[i]=input.nextDouble();
+	    for(int i=0;i<10;i++) {
+	    	for(int j=0;j<i;j++) {
+	    		if(a[i]>a[j]) {
+	    			temp=a[i];
+	    			a[i]=a[j];
+	    			a[j]=temp;
+	    		}
+	    	}
+	    }	    
+	    for(int i=0;i<10;i++) {
+	    	System.out.println(a[i]);
+	    }
+	}
+
+}
+
+
+
+
