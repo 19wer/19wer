@@ -1,0 +1,37 @@
+package lcl;
+import java.util.Scanner;
+public class ddd {
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in);
+		int[] score=new int[100];
+		String[] name=new String[100];
+	    int temp;
+	    String st;
+	    System.out.print("请输入学生个数: ");  
+	    int n=input.nextInt();
+	    System.out.print("请输入学生姓名: ");  
+	    for(int i=0;i<n;i++) {
+	    	name[i]=input.next(); 
+	    }
+	    System.out.println("请输入学生成绩: ");  
+	    for(int i=0;i<n;i++) {
+	    	score[i]=input.nextInt();  
+	    }
+	    for(int i=0;i<n;i++) {
+	    	for(int j=0;j<i;j++) {
+	    		if(score[i]>score[j]) {
+	    			temp=score[i];
+	    			score[i]=score[j];
+	    			score[j]=temp;
+	    			st=name[i];
+	    			name[i]=name[j];
+	    			name[j]=st;
+	    		}
+	    	}
+	    }	    
+	    for(int i=0;i<n;i++) {
+	    	System.out.println(name[i]+" "+score[i]);
+	    }
+	}
+
+}
