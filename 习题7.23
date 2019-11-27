@@ -1,0 +1,19 @@
+
+public class example {
+	public static void main(String[] args) {
+		int[] a=new int[101];//1代表开，0代表关,默认都为关
+		for(int i=1;i<=100;i++) {
+			for(int j=0;j<=100;j+=i) {
+				if(a[j]==0)
+					a[j]=1;
+				else
+					a[j]=0;
+			}
+		}
+		for(int i=1;i<=100;i++) {
+			if(a[i]==1)
+				System.out.println(i);
+		}
+	}
+
+}
