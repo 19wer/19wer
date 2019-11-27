@@ -1,0 +1,33 @@
+
+public class example {
+	public static void main(String[] args) {
+		
+	int t1=0,t2=0,t3=0,t4=0,i=0;
+	int[] a=new int[4];
+	String[] b=new String[4];
+		while(true) {
+		double n=Math.random();
+		int temp=(int)(n*52)+1;
+		if(temp<=13) {
+			a[0]=temp;
+			t1++;}
+		else if(temp<=26) {
+			a[1]=temp-13;
+			t2++;}
+		else if(temp<=39) {
+			a[2]=temp-26;
+			t3++;}
+		else {
+			a[3]=temp-39;
+			t4++;}
+		if(t1>0&&t2>0&&t3>0&&t4>0)
+			break;
+		}
+        System.out.println(a[0]+" of Spades");
+		System.out.println(a[1]+" of Clubs");
+		System.out.println(a[2]+" of Hearts");
+		System.out.println(a[3]+" of Diamonds");
+		System.out.print("Number of picks: ");
+		System.out.print(t1+t2+t3+t4);
+	}
+}
