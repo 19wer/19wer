@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class example {
+	public static void main(String[] args) {
+   char[] st=new char[100];
+   Scanner input=new Scanner(System.in);
+   String s=input.next();
+   for(int i=0;i<s.length();i++) {
+	   st[i]=s.charAt(i);
+   }
+   sort(st);
+	}
+	public static void sort(char[] st) {
+	  char temp;
+      for(int i=0;i<st.length;i++) {
+	     for(int j=i;j<st.length;j++) {
+		  if(st[i]>st[j]) {
+			temp=st[i];
+			st[i]=st[j];
+			st[j]=temp;
+		  }
+	     }
+      }
+      for(int i=0;i<st.length;i++) {
+    	  System.out.print(st[i]);
+      }
+	}
+}
+
+
